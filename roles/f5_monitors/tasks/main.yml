@@ -1,0 +1,13 @@
+---
+- name: Create or Update Monitors
+  bigip_monitor:
+    provider: "{{ provider }}"
+    name: "{{ item.name }}"
+    type: "{{ item.type }}"
+    defaults_from: "{{ item.defaults_from | default(omit) }}"
+    interval: "{{ item.interval | default(5) }}"
+    timeout: "{{ item.timeout | default(16) }}"
+    dest: "{{ item.dest | default(omit) }}"
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ f5_monitors }}"
+  when: f5_monitors is defined

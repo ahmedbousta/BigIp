@@ -1,0 +1,9 @@
+---
+- name: Configure F5 Devices
+  hosts: f5_devices
+  gather_facts: false
+  roles:
+    - f5_nodes
+    - f5_monitors
+    - f5_pools
+    - f5_virtual_servers

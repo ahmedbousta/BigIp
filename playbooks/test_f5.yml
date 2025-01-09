@@ -1,0 +1,11 @@
+---
+- name: Test F5 module
+  hosts: f5_devices
+  gather_facts: false
+  tasks:
+   - name: Check node
+     bigip_node:
+      provider: "{{ provider }}"
+      name: "test_node"
+      address: "1.2.3.4"
+      state: "present"

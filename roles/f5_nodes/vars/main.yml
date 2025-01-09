@@ -1,0 +1,6 @@
+f5_nodes:
+    - name: "node-web-1"
+      address: "10.0.0.10"
+    - name: "node-web-2"
+      address: "10.0.0.11"
+      state: "absent"

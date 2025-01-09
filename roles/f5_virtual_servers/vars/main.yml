@@ -1,0 +1,8 @@
+f5_virtual_servers:
+- name: "web-vs"
+  destination: "192.168.10.10"
+  port: 80
+  pool: "web-pool"
+  profiles:
+    - "/Common/http"
+    - "/Common/tcp"

@@ -1,0 +1,7 @@
+f5_monitors:
+    - name: "health-check-http"
+      type: "http"
+      defaults_from: "/Common/http"
+      interval: 10
+      timeout: 31
+      dest: "10.0.0.10:80"

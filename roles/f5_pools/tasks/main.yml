@@ -1,0 +1,11 @@
+---
+- name: Create or Update Pools
+  bigip_pool:
+    provider: "{{ provider }}"
+    name: "{{ item.name }}"
+    load_balancing_mode: "{{ item.load_balancing_mode | default('round-robin') }}"
+    monitors: "{{ item.monitors | default(omit) }}"
+    members: "{{ item.members | default(omit) }}"
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ f5_pools }}"
+  when: f5_pools is defined

@@ -1,0 +1,10 @@
+f5_pools:
+- name: "web-pool"
+  load_balancing_mode: "round-robin"
+  monitors:
+    - "/Common/tcp"
+  members:
+    - node: "node-web-1"
+      port: 80
+    - node: "node-web-2"
+      port: 80

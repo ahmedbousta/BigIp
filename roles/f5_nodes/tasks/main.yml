@@ -1,0 +1,10 @@
+---
+- name: Create or Update Nodes
+  bigip_node:
+    provider: "{{ provider }}"
+    name: "{{ item.name }}"
+    address: "{{ item.address }}"
+    state: "{{ item.state | default('present') }}"
+    monitor: "{{ item.monitor | default(omit) }}"
+  loop: "{{ f5_nodes }}"
+  when: f5_nodes is defined

@@ -1,0 +1,5 @@
+ansible_connection: httpapi
+ansible_httpapi_validate_certs: false
+provider:
+  user: root
+  password: xpo2021/
